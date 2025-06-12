@@ -27,15 +27,14 @@ div#zentai > div {
 }
 
 h2 {
-	border: solid 1px black;
-	margin: 5px;
 	font-family: cursive;
 	color: #3f3faf;
-	background: linear-gradient(white, #ffefaf);
+	background: linear-gradient(90deg,white, #ffefaf);
 }
 
-img.sign{
+img{
 	float: right;
+	z-index: 10;
 }
 
 
