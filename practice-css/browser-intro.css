@@ -12,11 +12,6 @@ h1 {
 	text-shadow: 1px 2px 2px navy;
 }
 
-h2 {
-	border: solid 1px black;
-	margin: 5px;
-}
-
 div#zentai {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -31,10 +26,12 @@ div#zentai > div {
 	background-color: #ffefaf;
 }
 
-h2{
+h2 {
+	border: solid 1px black;
+	margin: 5px;
 	font-family: cursive;
-	color:#3f3faf;
-	background-color: linear-gradient(white,#ffefaf);
+	color: #3f3faf;
+	background-image: linear-gradient(white, #ffefaf);
 }
 
 img.sign{
