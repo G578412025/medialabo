@@ -22,10 +22,10 @@ div#zentai {
 	grid-template-columns: 1fr 1fr;
 	height: 200px;
 	width: 1024px;
-	margin-left: 10px;
 }
 
 div#zentai > div {
+	margin-left: 10px;
 	padding:5px;
 	background-color: #ffefaf;
 }
@@ -36,7 +36,7 @@ div#zentai > h2{
 	background-color: linear-gradient(white,#ffefaf);
 }
 
-img{
+img.hover{
 	float: left;
 }
 
