@@ -31,7 +31,7 @@ h2 {
 	margin: 5px;
 	font-family: cursive;
 	color: #3f3faf;
-	background-image: linear-gradient(white, #ffefaf);
+	background: linear-gradient(white, #ffefaf);
 }
 
 img.sign{
