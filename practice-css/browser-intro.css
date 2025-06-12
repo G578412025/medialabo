@@ -36,8 +36,8 @@ div#zentai > div > h2{
 	background-color: linear-gradient(white,#ffefaf);
 }
 
-img:hover{
-	float: left;
+img.sign{
+	float: right;
 }
 
 
