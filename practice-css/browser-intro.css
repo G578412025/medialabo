@@ -30,7 +30,7 @@ div#zentai > div {
 	background-color: #ffefaf;
 }
 
-div#zentai > h2{
+div#zentai > div > h2{
 	font-family: cursive;
 	color:#3f3faf;
 	background-color: linear-gradient(white,#ffefaf);
