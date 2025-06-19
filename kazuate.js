@@ -20,6 +20,9 @@ function hantei(){
         if(yoso === kotae){
             console.log('正解です!おめでとう!');
             clear = true;
+        }else if(kaisu === 3){
+            console.log('まちがい.残念でした答えは' + kotae + 'です');
+            clear = true;
         }else if(yoso < kotae){
             console.log('まちがい. 答えはもっと大きいですよ');
         }else{
