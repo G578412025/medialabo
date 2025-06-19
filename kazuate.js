@@ -2,7 +2,7 @@ let kotae = Math.floor(Math.random()*10) + 1;
 console.log('答え(デバッグ用) : ' + kotae);
 
 let kaisu = 0;
-let clear = false;
+let fin_flg = false;
 
 hantei();
 hantei();
@@ -14,15 +14,15 @@ function hantei(){
     kaisu++;
     console.log(kaisu + '回目の予想 : ' + yoso);
 
-    if(clear){
+    if(fin_flg){
         console.log('答えは' + kotae + 'でした.ゲームは終了しています');
     }else{
         if(yoso === kotae){
             console.log('正解です!おめでとう!');
-            clear = true;
+            fin_flg = true;
         }else if(kaisu === 3){
             console.log('まちがい.残念でした答えは' + kotae + 'です');
-            clear = true;
+            fin_flg = true;
         }else if(yoso < kotae){
             console.log('まちがい. 答えはもっと大きいですよ');
         }else{
