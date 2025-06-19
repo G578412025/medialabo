@@ -10,14 +10,13 @@ hantei();
 hantei();
 
 function hantei(){
+    let yoso = 4;
+    kaisu++;
+    console.log(kaisu + '回目の予想 : ' + yoso);
+
     if(clear){
         console.log('答えは' + kotae + 'でした.ゲームは終了しています');
     }else{
-        let yoso = 4;
-
-        kaisu++;
-        console.log(kaisu + '回目の予想 : ' + yoso);
-
         if(yoso === kotae){
             console.log('正解です!おめでとう!');
             clear = true;
