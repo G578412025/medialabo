@@ -1,2 +1,2 @@
 console.log('こんにちは');
-console.leg('これだとエラー');
+console.log('これだとエラーは出ない');
