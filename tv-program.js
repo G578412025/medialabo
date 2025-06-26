@@ -1,3 +1,25 @@
+const genre = [
+  { value: "0000", text: "ニュース・報道" },
+  { value: "0100", text: "スポーツ" },
+  { value: "0205", text: "情報・ワイドショー" },
+  { value: "0300", text: "ドラマ" },
+  { value: "0409", text: "音楽" },
+  { value: "0502", text: "バラエティ" },
+  { value: "0600", text: "映画" },
+  { value: "0700", text: "アニメ" },
+  { value: "0800", text: "ドキュメンタリー・教養" },
+  { value: "0903", text: "劇場・公演" },
+  { value: "1000", text: "趣味・教育" },
+  { value: "1100", text: "福祉" }
+];
+const select_junre = document.querySelector('select#genre');
+
+genre.forEach(item =>{
+  const option = document.createElement('option');
+  option.value = item.value;
+  option.text = item.text;
+  select_junre.appendChild(option);
+});
 
 // 課題3-2 のプログラムはこの関数の中に記述すること
 function print(data) {
@@ -14,8 +36,16 @@ function print(data) {
 }
 
 // 課題5-1 の関数 printDom() はここに記述すること
-function printDom(data) {
+const button = document.querySelector("button#submit");
+const select_service = document.querySelector("select#service");
+button.addEventListener('click',printDom);
 
+function printDom(data) {
+  const service = select_service.value;
+  const junre = select_junre.value;
+
+  console.log("チャンネル:" + service);
+  console.log("ジャンル:" + junre);
 }
 
 // 課題6-1 のイベントハンドラ登録処理は以下に記述

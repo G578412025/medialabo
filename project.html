@@ -7,11 +7,19 @@
         <script src="./tv-program.js" defer></script>
     </head>
     <body>
-        <form action="" method="post">
-            <h1>NHK番組表</h1>
-            検索キー:<input type="text" name="searchText">
-            <input type="submit" value="送信">
-        </form>
+        <h1>NHK番組表</h1>
+        <div id="form">
+            <label for="service">チャンネル:</label>
+            <select id="service" name="service">
+                <option value="g1">NHK総合1</option>
+                <option value="e1">Eテレ1</option>
+            </select>
+            <label id="genre">ジャンル:</label>
+            <select id="genre">
+            </select>
+            <button id="submit" value="送信">送信</button>
+        </div>
+        
         <table border="1">
             <thead>
                 <div id="thead">

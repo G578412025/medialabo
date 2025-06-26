@@ -7,8 +7,10 @@
     </head>
     <body>
         <h1>数当てゲーム</h1>
-        <p>将来ここにはテキストボックスとボタンを設置します。</p>
-        <p><span id="kaisu">1</span>回目の予想 :<span id="answer">4</span></p>
-        <p id="result">将来ここに判定結果を表示します</p>
+        <label for="input_num">1から10までの間の整数:</label>
+        <input id="input_num" type="number" min="1" max="10" required> 
+        <button id="submit">回答</button>
+        <p><span id="kaisu">1</span>回目の予想 :<span id="answer"></span></p>
+        <p id="result"></p>
     </body>
 </html>
