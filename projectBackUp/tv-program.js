@@ -55,8 +55,6 @@ function printDom(data) {
   
   //テーブルのヘッダーを設定
   const thead = document.createElement('thead');
-  let div = document.createElement('div');
-  div.setAttribute('id','thead');
   let tr = document.createElement('tr');
   for(let head of tableHeader){
     let th = document.createElement('th');
@@ -64,15 +62,12 @@ function printDom(data) {
     th.textContent = head;
     tr.insertAdjacentElement('beforeend',th);
   }
-  div.insertAdjacentElement('beforeend',tr);
-  thead.insertAdjacentElement('beforeend',div);
+  thead.insertAdjacentElement('beforeend',tr);
   table.insertAdjacentElement('beforeend',thead);
 
   //テーブルの中身を設定(div以下は1行ごとに設定)
   const tbody = document.createElement('tbody');
   for(let row of list){
-    div = document.createElement('div');
-    div.setAttribute('id','tbody');
     tr = document.createElement('tr');
     
     let wantData = [row.start_time,row.end_time,row.service.name,row.title,row.subtitle,row.content,row.act];
@@ -86,8 +81,7 @@ function printDom(data) {
 
       tr.insertAdjacentElement('beforeend',td);
     }
-    div.insertAdjacentElement('beforeend',tr);
-    tbody.insertAdjacentElement('beforeend',div);
+    tbody.insertAdjacentElement('beforeend',tr);
   }
 
   table.insertAdjacentElement('beforeend',tbody);
