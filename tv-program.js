@@ -116,7 +116,9 @@ function formateISO(isoString){
   const sec = String(date.getSeconds()).padStart(2, '0');
 
   // 整形して結合
-  const ret = `${yyyy}-${mm}-${dd} ${hh}:${min}:${sec}`;
+  const time = hh+":"+min+":"+ sec;
+  const ymd = yyyy+"/"+mm+"/"+dd;
+  const ret = ymd+" "+time;
 
   return ret;
 }
