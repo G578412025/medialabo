@@ -39,7 +39,7 @@ function print(data) {
 const button = document.querySelector("button#submit");
 const select_service = document.querySelector("select#service");
 button.addEventListener('click',printDom);
-const tableHeader = ["開始時刻","終了時刻","チャンネル","タイトル","サブタイトル","番組説明","出演者"];
+const tableHeader = ["開始時刻","放映時間","チャンネル","タイトル","サブタイトル","番組説明","出演者"];
 
 function printDom(data) {
   const list =  data.list.g1;
@@ -70,7 +70,20 @@ function printDom(data) {
   for(let row of list){
     tr = document.createElement('tr');
     
-    let wantData = [row.start_time,row.end_time,row.service.name,row.title,row.subtitle,row.content,row.act];
+    //開始時間と放映時間のみ個別で記載
+    let start = formateISO(row.start_time);
+    td = document.createElement('td');
+    td.textContent = start;
+    tr.insertAdjacentElement('beforeend',td);
+    //放映時間算出・追加
+    let time = timeCalc(row.start_time,row.end_time);
+    td = document.createElement('td');
+    td.textContent = time + "分";
+    tr.insertAdjacentElement('beforeend',td);
+
+
+    //以下はforで回す
+    let wantData = [row.service.name,row.title,row.subtitle,row.content,row.act];
     for(let d of wantData){
       td = document.createElement('td');
       if(d === ""){
@@ -88,6 +101,33 @@ function printDom(data) {
 
   const body = document.querySelector('body');
   body.insertAdjacentElement('beforeend',table);
+}
+
+//ISO標準時形式を成形する
+function formateISO(isoString){
+  const date = new Date(isoString);
+
+  // 各要素を取得し、2桁表示に整形
+  const yyyy = date.getFullYear();
+  const mm = String(date.getMonth() + 1).padStart(2, '0');//0始まりにつき+1
+  const dd = String(date.getDate()).padStart(2, '0');
+  const hh = String(date.getHours()).padStart(2, '0');
+  const min = String(date.getMinutes()).padStart(2, '0');
+  const sec = String(date.getSeconds()).padStart(2, '0');
+
+  // 整形して結合
+  const ret = `${yyyy}-${mm}-${dd} ${hh}:${min}:${sec}`;
+
+  return ret;
+}
+
+//放映時間算出
+function timeCalc(start_time,end_time){
+  let start = new Date(start_time);
+  let end = new Date(end_time);
+  let timeMS = end-start;
+  let time = timeMS/(1000 * 60);
+  return time;
 }
 
 // 課題6-1 のイベントハンドラ登録処理は以下に記述
