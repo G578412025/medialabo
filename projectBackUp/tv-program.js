@@ -38,7 +38,7 @@ function print(data) {
 // 課題5-1 の関数 printDom() はここに記述すること
 const button = document.querySelector("button#submit");
 const select_service = document.querySelector("select#service");
-button.addEventListener('click',printDom);
+//button.addEventListener('click',printDom);
 const tableHeader = ["開始時刻","終了時刻","チャンネル","タイトル","サブタイトル","番組説明","出演者"];
 
 function printDom(data) {
