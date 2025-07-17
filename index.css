@@ -46,3 +46,7 @@ p{
 a:hover{
     text-shadow: 1px 1px 1px greenyellow;
 }
+
+div#conclusion{
+    margin-top: 710px;
+}
